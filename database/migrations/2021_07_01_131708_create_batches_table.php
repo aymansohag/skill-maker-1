@@ -17,6 +17,10 @@ class CreateBatchesTable extends Migration
             $table->id();
             $table->string('model');
             $table->string('model_id');
+            $table->string('batch_name');
+            $table->float('price','10','2');
+            $table->unsignedBigInteger('branch_id');
+            $table->longText('description');
             $table->timestamps();
         });
     }

@@ -70,10 +70,11 @@ Route::resource('trainers', TrainerController::class);
 Route::resource('buycourses', BuycourseController::class);
 Route::resource('supports', SupportController::class);
 Route::resource('courses', CourseControllernew::class);
-Route::resource('coursetrainers', CourseTrainerController::class);
+Route::resource('batch-trainers', BatchTrainerController::class);
 Route::resource('coursevideos', CourseVideoController::class);
 Route::resource('freelancers', FreelancerController::class);
 Route::resource('seminar-trainers', SeminarTrainerController::class);
+Route::resource('batches', BatchController::class);
 
 Route::get('/user', function(){
     return view('user.index');

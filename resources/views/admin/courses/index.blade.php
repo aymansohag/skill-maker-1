@@ -22,7 +22,8 @@
                                 <th>Price</th>
                                 <th>Image</th>
                                 <th>Video</th>
-                                <th>Trainer</th>
+                                {{-- <th>Trainer</th> --}}
+                                <th>Batch</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -40,13 +41,18 @@
                                             {{ $course->courseVideo->count()}}
                                         </a>
                                     </td>
-                                    <td>
+                                    {{-- <td>
                                         <a href="{{ route('coursetrainers.edit', $course->id) }}" class="btn btn-primary">
                                             @if ($course->trainers->count() == '0')
                                                 0
                                                 @else
                                                 {{ $course->trainers->count()}}
                                             @endif
+                                         </a>
+                                    </td> --}}
+                                    <td>
+                                        <a href="{{ route('batches.edit', $course->id) }}" class="btn btn-primary">
+                                            {{ $course->batches->count()}}
                                          </a>
                                     </td>
                                     <td>
@@ -55,10 +61,10 @@
                                             <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-info"><i class="fas fa-edit fa-1x"></i></a> |
                                             @csrf
                                             @method('DELETE')
-                                            <input type="submit" onclick="return confirm('Are you sure to delete !!');" class="btn btn-danger" value="Delete"> 
+                                            <input type="submit" onclick="return confirm('Are you sure to delete !!');" class="btn btn-danger" value="Delete">
                                         </form>
                                     </td>
-                                   
+
                                 </tr>
                             @endforeach
                             </tbody>
